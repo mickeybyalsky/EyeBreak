@@ -22,9 +22,12 @@ stopTimer.addEventListener("click", function() {
 
 //testNotif
 const testNotif = document.getElementById("testNotif");
-// testNotif.addEventListener('click', () => {
-//     chrome.runtime.sendMessage({action: 'testNotif'}, function(response){
-//         console.log(response.message);
+
+
+// testNotif.addEventListener("click", () => {
+//     console.log("testNotif clicked!");
+//     chrome.runtime.sendMessage({type: "messageType", data: "messageData"}, (response) => {
+//         console.log(response);
 //     });
 // });
 testNotif.addEventListener("click", () => {
@@ -33,15 +36,9 @@ testNotif.addEventListener("click", () => {
         console.log(response.message);
     })
     console.log("testNotif2 clicked!");
-    // chrome.runtime.sendMessage({action: 'testNotif'}, function (response) {
-    //     console.log(response.message);
-    // });
+    
 });
-// function() {
-//     console.log("testNotif clicked!");
-//     chrome.runtime.sendMessage({action: 'testNotif'}), function(response){
-//         console.log(response.message);
-//     }
+
     
 
 
