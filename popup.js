@@ -23,17 +23,10 @@ stopTimer.addEventListener("click", function() {
 //testNotif
 const testNotif = document.getElementById("testNotif");
 
-
-// testNotif.addEventListener("click", () => {
-//     console.log("testNotif clicked!");
-//     chrome.runtime.sendMessage({type: "messageType", data: "messageData"}, (response) => {
-//         console.log(response);
-//     });
-// });
 testNotif.addEventListener("click", () => {
     console.log("testNotif clicked!");
     chrome.runtime.sendMessage({action: "testNotif"}, (response) => {
-        console.log(response.message);
+        // console.log(response.message);
     })
     console.log("testNotif2 clicked!");
     

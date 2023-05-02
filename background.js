@@ -19,36 +19,7 @@ function startTimer() {
     }
   });
 }
-
-    //     timer.running = true;
-    //     timer.paused = false;
-    //     timer.timeRemaining = 60;
-    //     timer.intervalId = setInterval(function() {
-    //       timer.timeRemaining--;
-    //       if (timer.timeRemaining <= 0) {
-    //         // Time's up, show a notification
-    //         chrome.notifications.create({
-    //           type: 'basic',
-    //           iconUrl: 'icon.png',
-    //           title: 'Eye break!',
-    //           message: 'It\'s time to take a break and rest your eyes.',
-    //           requireInteraction: true
-    //         });
-    //         clearInterval(timer.intervalId);
-    //         timer.running = false;
-    //         timer.paused = false;
-    //         timer.timeRemaining = 0;
-    //       } else {
-    //         // Update the timer display in the popup
-    //         chrome.runtime.sendMessage({
-    //           action: 'updateTimerDisplay',
-    //           timeRemaining: timer.timeRemaining
-    //         });
-    //       }
-    //     }, 1000);
-    //   }
-
-    // Pause the timer
+   // Pause the timer
   function pauseTimer() {
     if (timer.running && !timer.paused) {
       clearInterval(timer.intervalId);
@@ -121,23 +92,23 @@ function startTimer() {
       }, 1000);
     });
   }
-    // // Listen for messages from the popup
-    // chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
-    //   console.log("in background.js");
-
-    //   if (message === 'startTimer') {
-    //       console.log(request.action);
-    //       startTimer();
-    //   } else if (message.action === 'pauseTimer') {
-    //       pauseTimer();
-    //   } else if (message.action === 'stopTimer') {
-    //       stopTimer();
-    //   } else if (message.action === 'testNotif') {
-    //       console.log("in request.action");
-    //       displayNotif();
-    //       console.log(message);
-    //       console.log("after displayNotif");
-    //       sendResponse({message: "response from background.js"})
-    //   }
-    // });
+    // Listen for messages from the popup
+    chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
+      console.log("in background.js");
+      console.log(message);
+      if (message === 'startTimer') {
+          console.log(request.action);
+          startTimer();
+      } else if (message.action === 'pauseTimer') {
+          pauseTimer();
+      } else if (message.action === 'stopTimer') {
+          stopTimer();
+      } else if (message.action === 'testNotif') {
+          console.log("in request.action");
+          displayNotif();
+          
+          console.log("after displayNotif");
+          sendResponse({message: "response from background.js"})
+      }
+    });
  
