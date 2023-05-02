@@ -3,7 +3,13 @@
   "name": "EyeBreak",
   "version": "1.0",
   "description": "The EyeBreak Chrome extension is designed to help you take regular breaks from your computer screen to reduce eye strain and improve your overall well-being.",
-  "permissions": ["alarms", "notifications"], 
+  "permissions": [
+    "alarms",
+    "notifications"
+  ], 
+  "background": {
+    "service_worker": "background.js"
+  },
   "icons": {
     "16": "images/eyeSmall.png",
     "32": "images/eyeSmall.png",
