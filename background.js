@@ -95,6 +95,7 @@ let timer = {
   
   function displayNotif(){
     console.log("displayNotif")
+    
     const options = {
         type: 'progress',
         title: 'Time for a break!',
@@ -119,29 +120,22 @@ let timer = {
       });
   }
   // Listen for messages from the popup
-//   chrome.runtime.onMessage.addListener(
-//     function (request, sender, sendResponse) {
-//     console.log(request.message)
-//     if (request.action == 'startTimer') {
-//         startTimer();
-//     } else if (request.action == 'pauseTimer') {
-//         pauseTimer();
-//     } else if (request.action == 'stopTimer') {
-//         stopTimer();
-//     } else if (request.action == 'testNotif') {
-//         displayNotif(); 
-//     }
-//     sendResponse({message: "Hello from background.js!"});
-//   });
-chrome.runtime.onMessage.addListener(
-    function (request, sender, sendResponse) {
-        console.log(request);
-        if (request.action)
-            displayNotif();
-
-        sendResponse(() => {
-            return false
-        });
+  chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
+    console.log("in background.js");
+    
+    if (message === 'startTimer') {
+        console.log(request.action);
+        startTimer();
+    } else if (message.action === 'pauseTimer') {
+        pauseTimer();
+    } else if (message.action === 'stopTimer') {
+        stopTimer();
+    } else if (message.action === 'testNotif') {
+        console.log("in request.action");
+        displayNotif();
+        console.log(message);
+        console.log("after displayNotif");
+        sendResponse({message: "response from background.js"})
     }
-);
+  });
     })};

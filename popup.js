@@ -28,9 +28,14 @@ const testNotif = document.getElementById("testNotif");
 //     });
 // });
 testNotif.addEventListener("click", () => {
-    chrome.runtime.sendMessage({action: 'testNotif'}, function (response) {
-        console.log(response);
-    });
+    console.log("testNotif clicked!");
+    chrome.runtime.sendMessage({action: "testNotif"}, (response) => {
+        console.log(response.message);
+    })
+    console.log("testNotif2 clicked!");
+    // chrome.runtime.sendMessage({action: 'testNotif'}, function (response) {
+    //     console.log(response.message);
+    // });
 });
 // function() {
 //     console.log("testNotif clicked!");

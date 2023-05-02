@@ -7,9 +7,6 @@
     "alarms",
     "notifications"
   ], 
-  "background": {
-    "service_worker": "background.js"
-  },
   "icons": {
     "16": "images/eyeSmall.png",
     "32": "images/eyeSmall.png",
