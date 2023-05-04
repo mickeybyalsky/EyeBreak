@@ -5,24 +5,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
     <title>EyeBreak</title>
 </head>
 <body>
     
-    <img class="img" src="./images/amber-eye.png" id="eyeLogo">
-    <h2>
-        EyeBreak Chrome Extension
+    <img class="img" src="./images/amber-eye.png" id="eyeLogo" height="150" width="240">
+    <h2 class="title">
+        EyeBreak
     </h2>
-    <button id="startTimer" class="button button1">
+    <button id="start_stopTimer" class="button button1">
         Start Timer
+    </button>
+      <i id="playIcon" class="fa fa-solid fa-play" style="color: #ffffff;"></i> 
+      <i id="stopIcon" class="fa fa-solid fa-stop" style="color: #ffffff; display: none;"></i>
+      
+    
+    <!-- <input type="button" id="startTimer" class="button button1" value='<i class="fa-solid fa-play" style="color: #ffffff;"></i> Start Timer' /> -->
+
+    <!-- <button id="stopTimer"  class="button button1">
+        Stop Timer
+    </button>  -->
+    <button id="resumeTimer" class="button button1">
+        Resume Timer
     </button>
     <button id="pauseTimer" class="button button1">
         Pause Timer
     </button>
-    <button id="stopTimer"  class="button button1">
-        Stop Timer
-    </button> 
+
     <button id="testNotif">
         TestNotif
     </button> 

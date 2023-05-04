@@ -1,4 +1,4 @@
-# EyeBreak
+# 👁️EyeBreak
 The EyeBreak Chrome Extension is a tool designed to help users reduce eye strain and improve their overall well-being by reminding them to take regular breaks from their computer screen. 
 
 EyeBreak reminds users to practice the optometrist recommended 20-20-20 rule which suggests to focus your eyes on something at least 20 feet away, for a total of 20 seconds, for every 20 minutes spent using a screen.
